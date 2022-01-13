@@ -1,25 +1,37 @@
 import React, { Component } from 'react';
 import { render } from 'react-dom';
-import Hello from './Hello';
 import './style.css';
+import 'bootstrap/dist/css/bootstrap.css';
 
+interface AppProps {}
+interface AppState {
+  letters: string[];
+  i: Number;
+}
 
-class App extends Component<AppProps, AppState> {
+export default class WordLine extends Component<AppProps, AppState> {
   constructor(props) {
     super(props);
     this.state = {
-      name: 'React',
+      letters: ['', '', '', '', ''],
+      i: 0,
     };
   }
 
   render() {
     return (
       <div>
-        <Hello name={this.state.name} />
-        <p>Start editing to see some magic happen :)</p>
+        for(i in this.state.letters)
+        {
+          <div key={this.state.i.toString()}>
+            <input
+              type="text"
+              className="word-box"
+              value={this.state.letters[this.state]}
+            />
+          </div>
+        }
       </div>
     );
   }
 }
-
-render(<App />, document.getElementById('root'));

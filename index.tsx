@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { render } from 'react-dom';
 import Hello from './Hello';
+import WordLine from './WordLine';
 import './style.css';
 import 'bootstrap/dist/css/bootstrap.css';
 
@@ -27,4 +28,4 @@ class App extends Component<AppProps, AppState> {
   }
 }
 
-render(<App />, document.getElementById('root'));
+render(<WordLine />, document.getElementById('root'));
